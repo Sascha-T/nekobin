@@ -1,0 +1,64 @@
+/*
+//  Copyright 2021 neko.rs contributors <https://neko.rs>
+//
+//  Licensed with GNU Affero General Public License v3.0 or later
+*/
+
+#progress_bar:hover {
+   @apply h-9;
+}
+
+#progress_bar::-moz-range-progress {
+    @apply bg-accent-9 h-full;
+}
+
+#progress_bar::-moz-range-track {
+    box-shadow: none;
+    border: none;
+    appearance: none;
+}
+
+#progress_bar::-moz-range-thumb {
+    height: 1rem;
+    width: 1rem;
+    border: 0;
+    @apply bg-accent-9;
+    border: none;
+    border-radius: 50%;
+    appearance: none;
+}
+
+
+.hidden_overlay {
+    opacity: 0%;
+    visibility: hidden;
+}
+
+#player_overlay_background {
+    @apply w-full h-50 absolute left-0 bottom-0 opacity-60;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 255), rgba(0, 0, 0, 0));
+}
+
+#player_controls_container {
+    @apply bottom-0 absolute left-12 right-12;
+    z-index: 12;
+}
+
+#player_controls_container {
+    > div >  div {
+        @apply flex w-1/2 items-center;
+        > button {
+            @apply text-2 text-white opacity-75 hover:opacity-100;
+            transition: opacity .1s cubic-bezier(0,0,0.2,1);
+        }
+    }
+}
+
+
+
+#player {
+    @apply relative w-full;
+    height: calc((9 / 16) * 100vw);
+    max-height: calc(100vh - 20rem);
+    min-height: 480px;
+}

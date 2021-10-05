@@ -1,0 +1,20 @@
+/*
+//  Copyright 2021 neko.rs contributors <https://neko.rs>
+//
+//  Licensed with GNU Affero General Public License v3.0 or later
+*/
+
+.button {
+  @apply table-cell px-10 my-10 mr-10 h-30 rounded-md transition-colors 
+  align-middle font-semibold leading-none text-6 font-inter;
+  
+  &.primary {
+    @apply text-white bg-accent-9 hover:bg-accent-8 active:bg-accent-9;
+  }
+
+  &.secondary {
+    @apply bg-black-opac-1  dark:bg-white-opac-3 
+    hover:bg-black-opac-2   dark:hover:bg-white-opac-4 
+    active:bg-black-opac-1  dark:active:bg-white-opac-3;
+  }
+}

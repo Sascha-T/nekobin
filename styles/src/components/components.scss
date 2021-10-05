@@ -1,0 +1,10 @@
+/*
+//  Copyright 2021 neko.rs contributors <https://neko.rs>
+//
+//  Licensed with GNU Affero General Public License v3.0 or later
+*/
+
+div.showcase {
+  @apply flex flex-wrap justify-center p-24 gap-x-16;
+  max-width: 2256px;
+}

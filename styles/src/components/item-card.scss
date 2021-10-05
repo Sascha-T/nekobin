@@ -1,0 +1,41 @@
+/*
+//  Copyright 2021 neko.rs contributors <https://neko.rs>
+//
+//  Licensed with GNU Affero General Public License v3.0 or later
+*/
+
+.item-card {
+    @apply flex-1 mb-40;
+    min-width: 320px;
+    max-width: 360px;
+    > a {
+      @apply relative block;
+      min-height: 180px;
+      max-height: 204px;
+      > div {
+        @apply absolute bottom-0 px-4 m-10 text-white rounded-sm bg-black-opac-9 font-inter;
+        > * {
+          @apply inline;
+        }
+      }
+    }
+    > div {
+      @apply flex mt-10;
+      > a > img {
+        @apply w-40 h-40 mr-10 rounded-full;
+      }
+      > div > a {
+        @apply block font-semibold font-inter text-5 text-gray-3 dark:text-gray-12 hover:text-accent-9 dark:hover:text-accent-10;
+        line-height: 1.2;
+      }
+      > div > div {
+        @apply font-inter text-6 text-gray-7 dark:text-gray-9;
+        > a {
+          @apply inline hover:text-accent-9 dark:hover:text-accent-10 overflow-ellipsis;
+        }
+        > p {
+          @apply inline;
+        }
+      }
+    }
+  }

@@ -1,0 +1,71 @@
+/*
+//  Copyright 2021 neko.rs contributors <https://neko.rs>
+//
+//  Licensed with GNU Affero General Public License v3.0 or later
+*/
+
+nav {
+  @apply z-10 flex w-full bg-white h-50 dark:bg-gray-2 text-gray-1 dark:text-gray-14 shadow-l-1 dark:shadow-d-1;
+  
+  .logo {
+    @apply mx-10;
+    > h1 {
+      @apply table-cell font-extrabold leading-none align-middle font-nunito-sans text-3 h-50;
+    }
+  }
+
+  .link {
+    @apply mx-10 transition-colors border-b-2 leading-none font-bold font-nunito-sans;
+    &.active {
+      @apply
+      text-accent-8 dark:text-accent-10
+      border-accent-8 dark:border-accent-10;
+    }
+    &:not(.active) {
+      @apply border-transparent 
+      hover:text-accent-8 dark:hover:text-accent-10;
+    }
+    > figure {
+      @apply table-cell px-10 align-middle md:hidden text-3 h-50;
+    }
+    > p {
+      @apply hidden md:table-cell align-middle h-50 text-5 xl:text-4;
+    }
+  }
+
+  .search {
+    @apply w-full max-w-2xl mx-20 my-2 h-46;
+    > div {
+      @apply flex w-full h-full p-5;
+      > input {
+        @apply w-full px-10 py-5 mr-1 transition-colors border-2 rounded-l-lg appearance-none font-inter text-5 placeholder-black-opac-7 dark:placeholder-white-opac-7 h-36 bg-clip-padding focus:outline-none border-black-opac-2 dark:border-white-opac-4 bg-black-opac-2 dark:bg-white-opac-4 hover:border-black-opac-4 dark:hover:border-white-opac-6 hover:bg-black-opac-2 dark:hover:bg-white-opac-4 focus:border-accent-9 dark:focus:border-accent-9 focus:bg-white dark:focus:bg-black;
+      }
+      > button {
+        @apply transition-colors rounded-r-lg h-36 w-34 text-3 bg-black-opac-1 hover:bg-black-opac-2 active:bg-black-opac-1 dark:bg-white-opac-3 dark:hover:bg-white-opac-4 dark:active:bg-white-opac-3;
+      }
+    }
+  }
+
+  .avatar {
+    @apply m-8 appearance-none focus:outline-none;
+    > img {
+      @apply transition-colors border-2 rounded-full h-34 w-34 border-accent-9 hover:border-accent-8;
+    }
+  }
+
+  .menu {
+    @apply absolute right-0 p-10 mt-10 mr-10 font-normal bg-white rounded-lg w-200 dark:bg-gray-2 font-inter text-6 shadow-l-2 dark:shadow-d-2;
+    > .menu-separator {
+      @apply h-1 mx-5 my-10 bg-white-opac-2;
+    }
+    > .menu-button {
+      @apply flex p-5 rounded-lg h-30 hover:bg-black-opac-2 dark:hover:bg-white-opac-4;
+      > figure {
+        @apply w-20 h-20 mr-5 leading-none text-4;
+      }
+      > p {
+        @apply align-middle;
+      }
+    }
+  }
+}

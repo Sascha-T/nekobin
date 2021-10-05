@@ -1,0 +1,40 @@
+{#
+## Copyright 2021 neko.rs contributors <https://neko.rs>
+##
+## Licensed with GNU Affero General Public License v3.0 or later
+#}
+
+{% extends "base.html" %}
+
+{% block head %}
+  <title>Neko Memebin | {{ path }}.webm</title>
+  <meta property="og:type" content="video">
+  <meta property="og:video" content="/m/{{ path }}/1.webm">
+  <script src="/assets/js/player.js" defer></script>
+{% endblock %}
+
+{% block content %}
+<div x-data="{ item:{ } }" class="w-full" x-init="fetch(`/api/memes/{{ path }}`).then(res => res.json()).then(json => item = json)">
+  <section id="player">
+    <video class="w-full h-full bg-black">
+      <source src="/m/{{ path }}/2.webm" type="video/webm">
+      <!--TODO: Put webm not supported notice-->
+    </video>
+    <div class="absolute bottom-0 w-full h-full" style="z-index: 11; transition: opacity .25s cubic-bezier(0,0,0.2,1), visibility .25s;">
+      <div onclick="playVideo()" class="absolute top-0 bottom-50 left-12 right-12"></div>
+      <div id="player_controls_container">
+        <input id="progress_bar" type="range" id="progress_bar" class="w-full h-3 bg-white-opac-4" value="0" min="0"/>
+        <div class="flex flex-auto w-full">
+          <div class="justify-start">
+            <button id="playpause" type="button" onclick="playVideo()" data-state="play" class="mdi mdi-play"></button>
+          </div>
+          <div class="justify-end">  
+            <button id="toggle_fullscreen" type="button" onclick="fullscreen()" class="mdi mdi-fullscreen"></button>
+          </div>
+        </div>
+      </div>
+      <div id="player_overlay_background"></div>
+    </div>
+  </section>
+</div>
+{% endblock %}
